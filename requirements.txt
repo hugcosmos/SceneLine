@@ -1,0 +1,14 @@
+# ASR dependencies for SceneLine
+# Requires Python 3.9-3.11 (torch incompatibility with 3.12+)
+
+# Core ASR frameworks (locked versions for stability)
+torch==2.2.0
+torchaudio==2.2.0
+funasr==1.1.2
+modelscope==1.14.0
+
+# Whisper backend
+faster-whisper>=1.0.0
+
+# Common dependencies (locked for compatibility)
+numpy==1.26.4

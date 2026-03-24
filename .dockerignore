@@ -1,0 +1,52 @@
+# Dependencies
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Build output
+dist
+.vite
+
+# Database (will be mounted as volume)
+*.db
+*.db-shm
+*.db-wal
+
+# Cache directories (will be mounted as volumes)
+tts-cache
+models
+tmp-audio
+
+# Logs (will be mounted as volume)
+logs
+*.log
+
+# Environment
+.env
+.env.local
+
+# IDE
+.vscode
+.idea
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Git
+.git
+.gitignore
+
+# Documentation
+*.md
+!README.md
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Test files
+test-*.py
+test-*.wav
+test-*.webm
