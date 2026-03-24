@@ -325,8 +325,8 @@ export default function History() {
   const scriptStats = sortedSessions.length > 0 ? calculateScriptStats(sortedSessions) : [];
 
   return (
-    <div className="max-w-3xl mx-auto px-4 py-8 space-y-6">
-      <div className="flex items-center justify-between">
+    <div className="max-w-3xl mx-auto px-4 py-8 min-h-full flex flex-col">
+      <div className="flex items-center justify-between mb-6">
         <h1 className="text-xl font-bold" data-testid="page-title-history">
           {t("history.title")}
         </h1>
@@ -364,58 +364,62 @@ export default function History() {
         )}
       </div>
 
-      {isLoading ? (
-        <div className="space-y-3">
-          {Array.from({ length: 3 }).map((_, i) => (
-            <Card key={i} className="border-card-border">
-              <CardContent className="pt-4 space-y-3">
-                <Skeleton className="h-4 w-3/4" />
-                <Skeleton className="h-3 w-1/2" />
+      <div className="flex-1">
+        {isLoading ? (
+          <div className="space-y-3">
+            {Array.from({ length: 3 }).map((_, i) => (
+              <Card key={i} className="border-card-border">
+                <CardContent className="pt-4 space-y-3">
+                  <Skeleton className="h-4 w-3/4" />
+                  <Skeleton className="h-3 w-1/2" />
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        ) : sortedSessions.length === 0 ? (
+          <div className="h-full flex items-center justify-center">
+            <Card className="border-card-border border-dashed w-full">
+              <CardContent className="py-16 flex flex-col items-center text-center space-y-3">
+                <div className="h-14 w-14 rounded-full bg-muted flex items-center justify-center">
+                  <HistoryIcon className="h-7 w-7 text-muted-foreground" />
+                </div>
+                <p className="text-sm text-muted-foreground">{t("history.noHistory")}</p>
+                <p className="text-xs text-muted-foreground">{t("history.noHistoryHint")}</p>
+                <Link href="/scripts/new">
+                  <Button variant="outline" size="sm" data-testid="link-upload-from-history">
+                    {t("history.startPractice")}
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
-          ))}
-        </div>
-      ) : sortedSessions.length === 0 ? (
-        <Card className="border-card-border border-dashed">
-          <CardContent className="py-16 flex flex-col items-center text-center space-y-3">
-            <div className="h-14 w-14 rounded-full bg-muted flex items-center justify-center">
-              <HistoryIcon className="h-7 w-7 text-muted-foreground" />
-            </div>
-            <p className="text-sm text-muted-foreground">{t("history.noHistory")}</p>
-            <p className="text-xs text-muted-foreground">{t("history.noHistoryHint")}</p>
-            <Link href="/scripts/new">
-              <Button variant="outline" size="sm" data-testid="link-upload-from-history">
-                {t("history.startPractice")}
-              </Button>
-            </Link>
-          </CardContent>
-        </Card>
-      ) : (
-        <div className="space-y-4">
-          {viewMode === "overview" && (
-            <>
-              <OverallStats sessions={sortedSessions} />
-              {sortedSessions.length >= 2 && <ScoreTrendChart sessions={sortedSessions} />}
-            </>
-          )}
+          </div>
+        ) : (
+          <div className="space-y-4">
+            {viewMode === "overview" && (
+              <>
+                <OverallStats sessions={sortedSessions} />
+                {sortedSessions.length >= 2 && <ScoreTrendChart sessions={sortedSessions} />}
+              </>
+            )}
 
-          {viewMode === "byScript" && (
-            <div className="grid gap-3 sm:grid-cols-2">
-              {scriptStats.map((stats) => (
-                <ScriptStatsCard key={stats.title} stats={stats} />
-              ))}
-            </div>
-          )}
+            {viewMode === "byScript" && (
+              <div className="grid gap-3 sm:grid-cols-2">
+                {scriptStats.map((stats) => (
+                  <ScriptStatsCard key={stats.title} stats={stats} />
+                ))}
+              </div>
+            )}
 
-          {viewMode === "details" && (
-            <div className="space-y-3">
-              {sortedSessions.map((s) => (
-                <SessionCard key={s.id} session={s} />
-              ))}
-            </div>
-          )}
-        </div>
-      )}
+            {viewMode === "details" && (
+              <div className="space-y-3">
+                {sortedSessions.map((s) => (
+                  <SessionCard key={s.id} session={s} />
+                ))}
+              </div>
+            )}
+          </div>
+        )}
+      </div>
     </div>
   );
 }

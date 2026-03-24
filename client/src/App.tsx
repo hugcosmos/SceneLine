@@ -7,7 +7,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Button } from "@/components/ui/button";
 import { Moon, Sun, Home as HomeIcon, Upload, History } from "lucide-react";
-import { PerplexityAttribution } from "@/components/PerplexityAttribution";
+
 import NotFound from "@/pages/not-found";
 import HomePage from "@/pages/home";
 import Scripts from "@/pages/scripts";
@@ -135,8 +135,7 @@ function App() {
                   <Route component={NotFound} />
                 </Switch>
               </main>
-              <PerplexityAttribution />
-              <footer className="py-6 text-center text-xs text-muted-foreground border-t mt-8">
+              <footer className="py-6 text-center text-xs text-muted-foreground border-t">
                 <p>Made with 💙 by Nicky & AI</p>
               </footer>
             </div>
