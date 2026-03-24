@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/cosmos/SceneLine/stargazers"><img src="https://img.shields.io/github/stars/cosmos/SceneLine?style=social" alt="Stars"></a>
+  <a href="https://github.com/hugcosmos/SceneLine/stargazers"><img src="https://img.shields.io/github/stars/hugcosmos/SceneLine?style=social" alt="Stars"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
   <a href="#"><img src="https://img.shields.io/badge/Node-20+-green.svg" alt="Node"></a>
   <a href="#"><img src="https://img.shields.io/badge/Python-3.9--3.11-blue.svg" alt="Python"></a>
@@ -145,4 +145,4 @@ sceneline/
 
 ---
 
-<p align="center">Made with 💙 by SceneLine Team</p>
+<p align="center">Made with 💙 by Nicky & AI</p>

@@ -122,9 +122,9 @@ function App() {
       <I18nProvider>
         <TooltipProvider>
           <Router hook={useHashLocation}>
-            <div className="min-h-screen bg-background text-foreground">
+            <div className="min-h-screen flex flex-col bg-background text-foreground">
               <NavBar />
-              <main className="pb-8">
+              <main className="flex-1 pb-8">
                 <Switch>
                   <Route path="/" component={HomePage} />
                   <Route path="/scripts" component={Scripts} />
@@ -136,6 +136,9 @@ function App() {
                 </Switch>
               </main>
               <PerplexityAttribution />
+              <footer className="py-6 text-center text-xs text-muted-foreground border-t mt-8">
+                <p>Made with 💙 by Nicky & AI</p>
+              </footer>
             </div>
             <Toaster />
           </Router>
