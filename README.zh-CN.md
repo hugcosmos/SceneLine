@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=SceneLine%20AI%20Dubbing%20Practice%20Platform%20home%20page%20dark%20mode%20with%20purple%20accent%20color%2C%20modern%20UI%20design%20with%20upload%20button%20and%20feature%20cards%2C%20professional%20screenshot&image_size=landscape_16_9" alt="SceneLine Home Page" width="800">
+  <img src="./client/public/images/sceneline-home.png" alt="SceneLine Home Page" width="800">
 </p>
 
 <p align="center">
