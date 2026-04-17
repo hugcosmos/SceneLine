@@ -38,7 +38,7 @@ SceneLine 是一个 AI 驱动的配音练习平台，让语言学习者通过影
 
 ```bash
 # 克隆仓库
-git clone https://github.com/YOUR_USERNAME/sceneline.git
+git clone https://github.com/hugcosmos/sceneline.git
 cd sceneline
 
 # 一键启动
