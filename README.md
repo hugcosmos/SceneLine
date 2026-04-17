@@ -38,7 +38,7 @@ SceneLine is an AI-powered dubbing practice platform that enables language learn
 
 ```bash
 # Clone repository
-git clone https://github.com/YOUR_USERNAME/sceneline.git
+git clone https://github.com/hugcosmos/sceneline.git
 cd sceneline
 
 # One-click startup
